@@ -25,15 +25,14 @@ def emotion_detector(text_to_analyze):
         }
         # Find the emotion with the highest score
         dominant_emotion = max(emotion_scores, key=emotion_scores.get)
-    elif response.status_code == 500:
+    elif response.status_code == 400:
         anger_score = None
         disgust_score = None
         fear_score = None
         joy_score = None
         sadness_score = None
         dominant_emotion = None
-
-    
+        
     return {
         'anger': anger_score,
         'disgust': disgust_score,
